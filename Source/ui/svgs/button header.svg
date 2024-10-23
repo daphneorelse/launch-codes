@@ -1,0 +1,12 @@
+<svg width="300" height="259" viewBox="0 0 300 259" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect x="12" y="54" width="4" height="4" fill="#6B6E6C"/>
+<rect x="12" y="168" width="4" height="4" fill="#6B6E6C"/>
+<rect x="12" y="74" width="4" height="4" fill="#6B6E6C"/>
+<rect x="12" y="94" width="4" height="4" fill="#6B6E6C"/>
+<rect x="12" y="188" width="4" height="4" fill="#6B6E6C"/>
+<rect x="12" y="208" width="4" height="4" fill="#6B6E6C"/>
+<path d="M0 4H5M10 4H5M5 4V37.25M5 258H0M5 258H10M5 258V229M5 133V106M5 133H11M5 133V155V160M2 46H8M2 56H8M2 66H8M2 106H8M2 76H8M5 160H2M5 160H8M2 170H8M2 180H8M2 200H8M2 190H8M11 133L14 129M11 133L14 137M2 86H8M2 96H8M2 220H8M2 210H8" stroke="#6B6E6C" stroke-width="2"/>
+<path d="M19 8L23 8M27 8H31M35 8H39M43 8H47M51 8H55M59 8H63M67 8H71M75 8L79 8M83 8H87M91 8H95M99 8H103M107 8L111 8M115 8H119M123 8H127M131 8H135M139 8H143M147 8H151" stroke="#6B6E6C" stroke-width="2"/>
+<path d="M254 8H250V4M281 8H285V4M183 8H187M191 8H195M199 8H203M207 8H211M215 8H219M223 8H227M231 8H235M239 8H243" stroke="#6B6E6C" stroke-width="2"/>
+<path d="M19 4L167 4M299 9V4L167 4M167 4V9M167 4V0" stroke="#6B6E6C" stroke-width="2"/>
+</svg>

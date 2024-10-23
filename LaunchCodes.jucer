@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<JUCERPROJECT id="gy6Tqd" name="LaunchCodes" projectType="audioplug" useAppConfig="0"
+              addUsingNamespaceToJuceHeader="0" jucerFormatVersion="1" companyName="Armory"
+              displaySplashScreen="1" pluginCharacteristicsValue="pluginEditorRequiresKeys,pluginIsSynth,pluginWantsMidiIn"
+              defines="JUCE_COREGRAPHICS_RENDER_WITH_MULTIPLE_PAINT_CALLS=1"
+              companyWebsite="daphneorelse.github.io">
+  <MAINGROUP id="PZzA9m" name="LaunchCodes">
+    <GROUP id="{125986CF-EBF4-F947-DEFB-43D28E085126}" name="Source">
+      <GROUP id="{8E38942E-AFC4-143E-7D89-849D688DE541}" name="dsp">
+        <FILE id="qtOO1N" name="DelayProcessor.cpp" compile="1" resource="0"
+              file="Source/dsp/DelayProcessor.cpp"/>
+        <FILE id="GVpOuf" name="DelayProcessor.h" compile="0" resource="0"
+              file="Source/dsp/DelayProcessor.h"/>
+        <FILE id="uYN5w8" name="DSPHelper.h" compile="0" resource="0" file="Source/dsp/DSPHelper.h"/>
+        <FILE id="zCz6Zk" name="FaustOscSynth.h" compile="0" resource="0" file="Source/dsp/FaustOscSynth.h"/>
+        <FILE id="HtZfvy" name="FilterProcessor.cpp" compile="1" resource="0"
+              file="Source/dsp/FilterProcessor.cpp"/>
+        <FILE id="i1fPhq" name="FilterProcessor.h" compile="0" resource="0"
+              file="Source/dsp/FilterProcessor.h"/>
+        <FILE id="Q7p90s" name="LFO.cpp" compile="1" resource="0" file="Source/dsp/LFO.cpp"/>
+        <FILE id="AK4ck3" name="LFO.h" compile="0" resource="0" file="Source/dsp/LFO.h"/>
+        <FILE id="erSpRQ" name="MyADSR.h" compile="0" resource="0" file="Source/dsp/MyADSR.h"/>
+        <FILE id="Kk6qc3" name="MySynth.cpp" compile="1" resource="0" file="Source/dsp/MySynth.cpp"/>
+        <FILE id="ddZzjY" name="MySynth.h" compile="0" resource="0" file="Source/dsp/MySynth.h"/>
+        <FILE id="w2HFk9" name="ProcessorBase.h" compile="0" resource="0" file="Source/dsp/ProcessorBase.h"/>
+        <FILE id="NSSTgs" name="ReverbProcessor.cpp" compile="1" resource="0"
+              file="Source/dsp/ReverbProcessor.cpp"/>
+        <FILE id="ZGsEMQ" name="ReverbProcessor.h" compile="0" resource="0"
+              file="Source/dsp/ReverbProcessor.h"/>
+        <FILE id="QNwClt" name="WaveshaperProcessor.cpp" compile="1" resource="0"
+              file="Source/dsp/WaveshaperProcessor.cpp"/>
+        <FILE id="HARgp5" name="WaveshaperProcessor.h" compile="0" resource="0"
+              file="Source/dsp/WaveshaperProcessor.h"/>
+      </GROUP>
+      <GROUP id="{107C18AF-8F80-5DF6-8103-9CB7B84B1988}" name="service">
+        <GROUP id="{CEA83F1C-56D8-9DD0-43AB-AA18B51FA313}" name="farbot">
+          <GROUP id="{9B128706-9D4C-DAED-FFCD-B6A4E0F2071B}" name="detail">
+            <FILE id="p7L5oF" name="fifo.tcc" compile="0" resource="1" file="Source/service/farbot/detail/fifo.tcc"/>
+            <FILE id="oa2Twz" name="RealtimeObject.tcc" compile="0" resource="1"
+                  file="Source/service/farbot/detail/RealtimeObject.tcc"/>
+          </GROUP>
+          <FILE id="MThHXS" name="AsyncCaller.hpp" compile="0" resource="0" file="Source/service/farbot/AsyncCaller.hpp"/>
+          <FILE id="aKgJjr" name="fifo.hpp" compile="0" resource="0" file="Source/service/farbot/fifo.hpp"/>
+          <FILE id="r5gZx9" name="RealtimeObject.hpp" compile="0" resource="0"
+                file="Source/service/farbot/RealtimeObject.hpp"/>
+          <FILE id="wtpgDI" name="RealtimeTraits.hpp" compile="0" resource="0"
+                file="Source/service/farbot/RealtimeTraits.hpp"/>
+        </GROUP>
+        <FILE id="QaynAP" name="ParameterHelper.h" compile="0" resource="0"
+              file="Source/service/ParameterHelper.h"/>
+        <FILE id="O1JAsu" name="ParamIDs.h" compile="0" resource="0" file="Source/service/ParamIDs.h"/>
+        <FILE id="ISlLWq" name="PresetManager.cpp" compile="1" resource="0"
+              file="Source/service/PresetManager.cpp"/>
+        <FILE id="Mwzd2V" name="PresetManager.h" compile="0" resource="0" file="Source/service/PresetManager.h"/>
+      </GROUP>
+      <GROUP id="{83404F1D-7E87-C43B-9D77-0A843E439D99}" name="ui">
+        <GROUP id="{6F9B98BB-2A73-D21D-9DCD-8322636D9D50}" name="fonts">
+          <FILE id="Epmz5w" name="Inter.ttf" compile="0" resource="1" file="Source/ui/fonts/Inter.ttf"/>
+        </GROUP>
+        <GROUP id="{9237E316-B2FC-2EDC-400E-2B743D0F8D21}" name="lnfs">
+          <FILE id="x0i4CQ" name="EditorLnf.h" compile="0" resource="0" file="Source/ui/lnfs/EditorLnf.h"/>
+          <FILE id="Jf6yTK" name="PresetPanelLNF.h" compile="0" resource="0"
+                file="Source/ui/lnfs/PresetPanelLNF.h"/>
+        </GROUP>
+        <GROUP id="{C067B996-57FE-C049-B87F-D2E475E5A1BF}" name="svgs">
+          <FILE id="ZeosEz" name="bandpass.svg" compile="0" resource="1" file="Source/ui/svgs/bandpass.svg"/>
+          <FILE id="u13ECd" name="big red button pressed.svg" compile="0" resource="1"
+                file="Source/ui/svgs/big red button pressed.svg"/>
+          <FILE id="vH1wOG" name="big red button standby.svg" compile="0" resource="1"
+                file="Source/ui/svgs/big red button standby.svg"/>
+          <FILE id="RC5zNb" name="bottom-right markings.svg" compile="0" resource="1"
+                file="Source/ui/svgs/bottom-right markings.svg"/>
+          <FILE id="OJU0J2" name="button header.svg" compile="0" resource="1"
+                file="Source/ui/svgs/button header.svg"/>
+          <FILE id="pJhrov" name="cancel.svg" compile="0" resource="1" file="Source/ui/svgs/cancel.svg"/>
+          <FILE id="d2xaYV" name="crosshair.svg" compile="0" resource="1" file="Source/ui/svgs/crosshair.svg"/>
+          <FILE id="FJYMnu" name="delay header.svg" compile="0" resource="1"
+                file="Source/ui/svgs/delay header.svg"/>
+          <FILE id="SnFfdp" name="delete.svg" compile="0" resource="1" file="Source/ui/svgs/delete.svg"/>
+          <FILE id="tfy4fV" name="even.svg" compile="0" resource="1" file="Source/ui/svgs/even.svg"/>
+          <FILE id="VsFoSc" name="filter header.svg" compile="0" resource="1"
+                file="Source/ui/svgs/filter header.svg"/>
+          <FILE id="T5A8Vj" name="frequencyHertz.svg" compile="0" resource="1"
+                file="Source/ui/svgs/frequencyHertz.svg"/>
+          <FILE id="S2jvLC" name="frequencySync.svg" compile="0" resource="1"
+                file="Source/ui/svgs/frequencySync.svg"/>
+          <FILE id="OECc8e" name="frequencyTime.svg" compile="0" resource="1"
+                file="Source/ui/svgs/frequencyTime.svg"/>
+          <FILE id="WZBbWo" name="highpass.svg" compile="0" resource="1" file="Source/ui/svgs/highpass.svg"/>
+          <FILE id="HAjISF" name="highshelf.svg" compile="0" resource="1" file="Source/ui/svgs/highshelf.svg"/>
+          <FILE id="tgVfdX" name="in.svg" compile="0" resource="1" file="Source/ui/svgs/in.svg"/>
+          <FILE id="Q7WhQ9" name="lever handle.svg" compile="0" resource="1"
+                file="Source/ui/svgs/lever handle.svg"/>
+          <FILE id="HCGxZ5" name="lfo header.svg" compile="0" resource="1" file="Source/ui/svgs/lfo header.svg"/>
+          <FILE id="dIoVqC" name="linked.svg" compile="0" resource="1" file="Source/ui/svgs/linked.svg"/>
+          <FILE id="iBosnE" name="logo group.svg" compile="0" resource="1" file="Source/ui/svgs/logo group.svg"/>
+          <FILE id="GMvMnP" name="logo ver1.svg" compile="0" resource="1" file="Source/ui/svgs/logo ver1.svg"/>
+          <FILE id="W1FVie" name="loop.svg" compile="0" resource="1" file="Source/ui/svgs/loop.svg"/>
+          <FILE id="gZRCsj" name="lowpass.svg" compile="0" resource="1" file="Source/ui/svgs/lowpass.svg"/>
+          <FILE id="ut701y" name="lowshelf.svg" compile="0" resource="1" file="Source/ui/svgs/lowshelf.svg"/>
+          <FILE id="zfjjSl" name="meter header.svg" compile="0" resource="1"
+                file="Source/ui/svgs/meter header.svg"/>
+          <FILE id="B0OmsR" name="next.svg" compile="0" resource="1" file="Source/ui/svgs/next.svg"/>
+          <FILE id="NxqoPZ" name="noise header.svg" compile="0" resource="1"
+                file="Source/ui/svgs/noise header.svg"/>
+          <FILE id="ZYVlQP" name="odd.svg" compile="0" resource="1" file="Source/ui/svgs/odd.svg"/>
+          <FILE id="noV8Fd" name="oneshot.svg" compile="0" resource="1" file="Source/ui/svgs/oneshot.svg"/>
+          <FILE id="NSd5QW" name="oscillator header.svg" compile="0" resource="1"
+                file="Source/ui/svgs/oscillator header.svg"/>
+          <FILE id="UJVVQd" name="out.svg" compile="0" resource="1" file="Source/ui/svgs/out.svg"/>
+          <FILE id="PAnBV6" name="piano.svg" compile="0" resource="1" file="Source/ui/svgs/piano.svg"/>
+          <FILE id="dVmdRq" name="previous.svg" compile="0" resource="1" file="Source/ui/svgs/previous.svg"/>
+          <FILE id="vn1oPg" name="reverb header.svg" compile="0" resource="1"
+                file="Source/ui/svgs/reverb header.svg"/>
+          <FILE id="n7hCKb" name="save.svg" compile="0" resource="1" file="Source/ui/svgs/save.svg"/>
+          <FILE id="VqmMCF" name="saw wave.svg" compile="0" resource="1" file="Source/ui/svgs/saw wave.svg"/>
+          <FILE id="pzE70a" name="sine wave.svg" compile="0" resource="1" file="Source/ui/svgs/sine wave.svg"/>
+          <FILE id="frQOtS" name="square wave.svg" compile="0" resource="1" file="Source/ui/svgs/square wave.svg"/>
+          <FILE id="PcFjZq" name="triangle wave.svg" compile="0" resource="1"
+                file="Source/ui/svgs/triangle wave.svg"/>
+          <FILE id="QaDeIH" name="unlinked.svg" compile="0" resource="1" file="Source/ui/svgs/unlinked.svg"/>
+          <FILE id="edIyRV" name="waveshaper header.svg" compile="0" resource="1"
+                file="Source/ui/svgs/waveshaper header.svg"/>
+          <FILE id="AgZJdA" name="x transform.svg" compile="0" resource="1" file="Source/ui/svgs/x transform.svg"/>
+          <FILE id="KLkjy1" name="y transform.svg" compile="0" resource="1" file="Source/ui/svgs/y transform.svg"/>
+        </GROUP>
+        <FILE id="aVVCTr" name="ComponentIDs.h" compile="0" resource="0" file="Source/ui/ComponentIDs.h"/>
+        <FILE id="MomkLh" name="ControlLever.cpp" compile="1" resource="0"
+              file="Source/ui/ControlLever.cpp"/>
+        <FILE id="EHMWIg" name="ControlLever.h" compile="0" resource="0" file="Source/ui/ControlLever.h"/>
+        <FILE id="P2q38L" name="CrosshairDragger.cpp" compile="1" resource="0"
+              file="Source/ui/CrosshairDragger.cpp"/>
+        <FILE id="uA2ASe" name="CrosshairDragger.h" compile="0" resource="0"
+              file="Source/ui/CrosshairDragger.h"/>
+        <FILE id="vegYKF" name="DelayFilter.cpp" compile="1" resource="0" file="Source/ui/DelayFilter.cpp"/>
+        <FILE id="WakCr0" name="DelayFilter.h" compile="0" resource="0" file="Source/ui/DelayFilter.h"/>
+        <FILE id="jKqI3I" name="DelayKnob.cpp" compile="1" resource="0" file="Source/ui/DelayKnob.cpp"/>
+        <FILE id="ImyYtz" name="DelayKnob.h" compile="0" resource="0" file="Source/ui/DelayKnob.h"/>
+        <FILE id="zSNOlE" name="DelayModule.cpp" compile="1" resource="0" file="Source/ui/DelayModule.cpp"/>
+        <FILE id="BUXDuc" name="DelayModule.h" compile="0" resource="0" file="Source/ui/DelayModule.h"/>
+        <FILE id="Wbquu2" name="DescriptionBox.h" compile="0" resource="0"
+              file="Source/ui/DescriptionBox.h"/>
+        <FILE id="uVRMNi" name="DialKnob.cpp" compile="1" resource="0" file="Source/ui/DialKnob.cpp"/>
+        <FILE id="lVWBx8" name="DialKnob.h" compile="0" resource="0" file="Source/ui/DialKnob.h"/>
+        <FILE id="XWNody" name="EditorContent.cpp" compile="1" resource="0"
+              file="Source/ui/EditorContent.cpp"/>
+        <FILE id="EIMqkD" name="EditorContent.h" compile="0" resource="0" file="Source/ui/EditorContent.h"/>
+        <FILE id="YfWLPR" name="EffectsSlot.cpp" compile="1" resource="0" file="Source/ui/EffectsSlot.cpp"/>
+        <FILE id="IYKaKQ" name="EffectsSlot.h" compile="0" resource="0" file="Source/ui/EffectsSlot.h"/>
+        <FILE id="aV698A" name="EnvelopeNode.h" compile="0" resource="0" file="Source/ui/EnvelopeNode.h"/>
+        <FILE id="FiSd0W" name="EnvelopeView.cpp" compile="1" resource="0"
+              file="Source/ui/EnvelopeView.cpp"/>
+        <FILE id="CpUKM0" name="EnvelopeView.h" compile="0" resource="0" file="Source/ui/EnvelopeView.h"/>
+        <FILE id="VWo9Yl" name="FilterModule.cpp" compile="1" resource="0"
+              file="Source/ui/FilterModule.cpp"/>
+        <FILE id="GULY2p" name="FilterModule.h" compile="0" resource="0" file="Source/ui/FilterModule.h"/>
+        <FILE id="U3AOAL" name="FilterPicker.cpp" compile="1" resource="0"
+              file="Source/ui/FilterPicker.cpp"/>
+        <FILE id="f519lG" name="FilterPicker.h" compile="0" resource="0" file="Source/ui/FilterPicker.h"/>
+        <FILE id="Uw1LT2" name="FocusBorder.h" compile="0" resource="0" file="Source/ui/FocusBorder.h"/>
+        <FILE id="uacEeP" name="FunctionalButton.h" compile="0" resource="0"
+              file="Source/ui/FunctionalButton.h"/>
+        <FILE id="H7UubF" name="GUIHelper.cpp" compile="1" resource="0" file="Source/ui/GUIHelper.cpp"/>
+        <FILE id="qgSWNo" name="GUIHelper.h" compile="0" resource="0" file="Source/ui/GUIHelper.h"/>
+        <FILE id="TcOYYp" name="IconSlider.h" compile="0" resource="0" file="Source/ui/IconSlider.h"/>
+        <FILE id="wIcnYV" name="KeyKnob.cpp" compile="1" resource="0" file="Source/ui/KeyKnob.cpp"/>
+        <FILE id="B1VJnY" name="KeyKnob.h" compile="0" resource="0" file="Source/ui/KeyKnob.h"/>
+        <FILE id="KZRpTS" name="LevelMeter.cpp" compile="1" resource="0" file="Source/ui/LevelMeter.cpp"/>
+        <FILE id="ktS9Ch" name="LevelMeter.h" compile="0" resource="0" file="Source/ui/LevelMeter.h"/>
+        <FILE id="lWhiDZ" name="LFOModule.cpp" compile="1" resource="0" file="Source/ui/LFOModule.cpp"/>
+        <FILE id="YF6VDq" name="LFOModule.h" compile="0" resource="0" file="Source/ui/LFOModule.h"/>
+        <FILE id="H8oegZ" name="LFOVisualizer.cpp" compile="1" resource="0"
+              file="Source/ui/LFOVisualizer.cpp"/>
+        <FILE id="sep5o8" name="LFOVisualizer.h" compile="0" resource="0" file="Source/ui/LFOVisualizer.h"/>
+        <FILE id="GM12En" name="MidiButton.cpp" compile="1" resource="0" file="Source/ui/MidiButton.cpp"/>
+        <FILE id="QlAF4Z" name="MidiButton.h" compile="0" resource="0" file="Source/ui/MidiButton.h"/>
+        <FILE id="TMBEc0" name="PresetPanel.cpp" compile="1" resource="0" file="Source/ui/PresetPanel.cpp"/>
+        <FILE id="vrbS9A" name="PresetPanel.h" compile="0" resource="0" file="Source/ui/PresetPanel.h"/>
+        <FILE id="MttMK9" name="ReverbModule.cpp" compile="1" resource="0"
+              file="Source/ui/ReverbModule.cpp"/>
+        <FILE id="odq1we" name="ReverbModule.h" compile="0" resource="0" file="Source/ui/ReverbModule.h"/>
+        <FILE id="ctq5QU" name="ScrollWheel.cpp" compile="1" resource="0" file="Source/ui/ScrollWheel.cpp"/>
+        <FILE id="JNVKsK" name="ScrollWheel.h" compile="0" resource="0" file="Source/ui/ScrollWheel.h"/>
+        <FILE id="IPbT3L" name="SliderBase.h" compile="0" resource="0" file="Source/ui/SliderBase.h"/>
+        <FILE id="MzsdNM" name="TextBox.h" compile="0" resource="0" file="Source/ui/TextBox.h"/>
+        <FILE id="MLxmsp" name="TextSlider.h" compile="0" resource="0" file="Source/ui/TextSlider.h"/>
+        <FILE id="OQVJOD" name="ValueTreeComponents.cpp" compile="1" resource="0"
+              file="Source/ui/ValueTreeComponents.cpp"/>
+        <FILE id="CkDYjO" name="ValueTreeComponents.h" compile="0" resource="0"
+              file="Source/ui/ValueTreeComponents.h"/>
+        <FILE id="ZAECPK" name="WavePicker.cpp" compile="1" resource="0" file="Source/ui/WavePicker.cpp"/>
+        <FILE id="oJsjoh" name="WavePicker.h" compile="0" resource="0" file="Source/ui/WavePicker.h"/>
+        <FILE id="b9w9bf" name="WaveshaperNode.h" compile="0" resource="0"
+              file="Source/ui/WaveshaperNode.h"/>
+        <FILE id="wPrYe5" name="WaveshaperModule.cpp" compile="1" resource="0"
+              file="Source/ui/WaveshaperModule.cpp"/>
+        <FILE id="XtF2dl" name="WaveshaperModule.h" compile="0" resource="0"
+              file="Source/ui/WaveshaperModule.h"/>
+        <FILE id="qLS3lH" name="XYControlPad.cpp" compile="1" resource="0"
+              file="Source/ui/XYControlPad.cpp"/>
+        <FILE id="NfcFCy" name="XYControlPad.h" compile="0" resource="0" file="Source/ui/XYControlPad.h"/>
+      </GROUP>
+      <FILE id="yphJE5" name="PluginEditor.cpp" compile="1" resource="0"
+            file="Source/PluginEditor.cpp"/>
+      <FILE id="UUsioQ" name="PluginEditor.h" compile="0" resource="0" file="Source/PluginEditor.h"/>
+      <FILE id="zBcmGJ" name="PluginProcessor.cpp" compile="1" resource="0"
+            file="Source/PluginProcessor.cpp"/>
+      <FILE id="ghsEnd" name="PluginProcessor.h" compile="0" resource="0"
+            file="Source/PluginProcessor.h"/>
+    </GROUP>
+  </MAINGROUP>
+  <MODULES>
+    <MODULE id="juce_audio_basics" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_audio_devices" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_audio_formats" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_audio_plugin_client" showAllCode="1" useLocalCopy="0"
+            useGlobalPath="1"/>
+    <MODULE id="juce_audio_processors" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_audio_utils" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_core" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_data_structures" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_dsp" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_events" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_graphics" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_gui_basics" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_gui_extra" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+  </MODULES>
+  <JUCEOPTIONS JUCE_STRICT_REFCOUNTEDPOINTER="1" JUCE_VST3_CAN_REPLACE_VST2="0"/>
+  <EXPORTFORMATS>
+    <XCODE_MAC targetFolder="Builds/MacOSX">
+      <CONFIGURATIONS>
+        <CONFIGURATION isDebug="1" name="Debug" targetName="LaunchCodes"/>
+        <CONFIGURATION isDebug="0" name="Release" targetName="LaunchCodes"/>
+      </CONFIGURATIONS>
+      <MODULEPATHS>
+        <MODULEPATH id="juce_audio_basics" path="../../../JUCE/modules"/>
+        <MODULEPATH id="juce_audio_devices" path="../../../JUCE/modules"/>
+        <MODULEPATH id="juce_audio_formats" path="../../../JUCE/modules"/>
+        <MODULEPATH id="juce_audio_plugin_client" path="../../../JUCE/modules"/>
+        <MODULEPATH id="juce_audio_processors" path="../../../JUCE/modules"/>
+        <MODULEPATH id="juce_audio_utils" path="../../../JUCE/modules"/>
+        <MODULEPATH id="juce_core" path="../../../JUCE/modules"/>
+        <MODULEPATH id="juce_data_structures" path="../../../JUCE/modules"/>
+        <MODULEPATH id="juce_events" path="../../../JUCE/modules"/>
+        <MODULEPATH id="juce_graphics" path="../../../JUCE/modules"/>
+        <MODULEPATH id="juce_gui_basics" path="../../../JUCE/modules"/>
+        <MODULEPATH id="juce_gui_extra" path="../../../JUCE/modules"/>
+        <MODULEPATH id="juce_dsp" path="../../../JUCE/modules"/>
+      </MODULEPATHS>
+    </XCODE_MAC>
+  </EXPORTFORMATS>
+</JUCERPROJECT>
