@@ -10,9 +10,13 @@
 #include "PresetManager.h"
 
 const juce::File PresetManager::defaultDirectory {
-    juce::File::getSpecialLocation(juce::File::SpecialLocationType::commonDocumentsDirectory)
-        .getChildFile(ProjectInfo::companyName)
-        .getChildFile(ProjectInfo::projectName)
+#if JUCE_MAC
+    juce::File::getSpecialLocation(juce::File::SpecialLocationType::userMusicDirectory)
+#else
+    juce::File::getSpecialLocation(juce::File::SpecialLocationType::userDocumentsDirectory)
+#endif
+    .getChildFile(ProjectInfo::companyName)
+    .getChildFile(ProjectInfo::projectName)
 };
 const juce::String PresetManager::extension { "preset" };
 //const juce::String PresetManager::presetNameProperty { "presetName" };

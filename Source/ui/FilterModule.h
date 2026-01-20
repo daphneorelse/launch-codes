@@ -89,7 +89,7 @@ private:
     juce::ParameterAttachment& attachmentQ;
     juce::ParameterAttachment& attachmentGain;
     
-    JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR(FilterNode);
+    JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR(FilterNode)
 };
 
 class FilterVisualizer : public juce::Component
@@ -157,7 +157,7 @@ private:
     juce::Rectangle<int> mainArea;
     std::vector<int> frequencies;
     
-    JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR(FilterVisualizer);
+    JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR(FilterVisualizer)
 };
 
 

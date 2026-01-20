@@ -20,6 +20,7 @@ struct TextBox final : public juce::Label
     TextBox()
     {
         setJustificationType (juce::Justification::centred);
+        
         setInterceptsMouseClicks (false, false);
         setColour (juce::Label::outlineWhenEditingColourId, juce::Colours::transparentWhite);
     }

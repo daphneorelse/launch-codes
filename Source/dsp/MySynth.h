@@ -18,6 +18,51 @@
 #include "../service/ParameterHelper.h"
 #include "../service/ParamIDs.h"
 
+template <typename FaustDSP>
+struct FaustVoiceDSP
+{
+    std::unique_ptr<dsp> dsp;
+    std::unique_ptr<MapUI> ui;
+
+    std::vector<std::vector<float>> outputBuffers;
+    std::vector<float*> outputPointers;
+
+    int numChannels = 0;
+    int maxBlockSize = 0;
+
+    void prepare(double sampleRate, int blockSize, int channels)
+    {
+        // Destroy old state FIRST
+        dsp.reset();
+        ui.reset();
+        outputBuffers.clear();
+        outputPointers.clear();
+
+        numChannels = channels;
+        maxBlockSize = blockSize;
+
+        dsp = std::make_unique<FaustDSP>();
+        ui = std::make_unique<MapUI>();
+
+        dsp->init(sampleRate);
+        dsp->buildUserInterface(ui.get());
+
+        outputBuffers.resize(channels);
+        outputPointers.resize(channels);
+
+        for (int ch = 0; ch < channels; ++ch)
+        {
+            outputBuffers[ch].resize(blockSize);
+            outputPointers[ch] = outputBuffers[ch].data();
+        }
+    }
+
+    float** getOutputs()
+    {
+        return outputPointers.data();
+    }
+};
+
 struct MySound : public juce::SynthesiserSound
 {
     MySound() {}
@@ -118,12 +163,15 @@ private:
     std::atomic<int> filterEnvMode;
     std::atomic<bool> filterKeyFollowIO;
     
-    MapUI* oscUI;
+   /* MapUI* oscUI;
     dsp* oscDSP;
     float** oscOutput;
     MapUI* noiseUI;
     dsp* noiseDSP;
-    float** noiseOutput;
+    float** noiseOutput;*/
+
+    FaustVoiceDSP<oscDsp> faustOsc;
+    FaustVoiceDSP<noiseDsp> faustNoise;
     
-    JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR(MyVoice);
+    JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR(MyVoice)
 };

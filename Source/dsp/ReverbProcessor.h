@@ -44,5 +44,5 @@ private:
     juce::dsp::Reverb reverb;
     juce::Reverb::Parameters reverbParameters;
 
-    JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (ReverbProcessor);
+    JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (ReverbProcessor)
 };

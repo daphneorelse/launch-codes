@@ -125,7 +125,7 @@ private:
     
     juce::NormalisableRange<float> lfoPositionRange;
     
-    JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR(TextSlider);
+    JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR(TextSlider)
 };
 
 
@@ -190,5 +190,5 @@ private:
     
     bool syncState;
     
-    JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR(TextSliderSwitcher);
+    JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR(TextSliderSwitcher)
 };

@@ -4,7 +4,7 @@
 #include "dsp/LFO.h"
 #include "dsp/MySynth.h"
 #include "dsp/MyADSR.h"
-#include "dsp/FaustOscSynth.h"
+//#include "dsp/FaustOscSynth.h"
 #include "dsp/DelayProcessor.h"
 #include "dsp/ReverbProcessor.h"
 #include "dsp/FilterProcessor.h"
@@ -103,5 +103,5 @@ private:
     juce::AudioParameterFloat* masterGainParam { nullptr };
     juce::dsp::Gain<float> masterGain;
     
-    JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (PluginProcessor);
+    JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (PluginProcessor)
 };

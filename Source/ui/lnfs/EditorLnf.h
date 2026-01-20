@@ -18,6 +18,11 @@ public:
     DefaultLNF ()
     {
         inter = juce::Typeface::createSystemTypefaceFor (BinaryData::Inter_ttf, BinaryData::Inter_ttfSize);
+
+        setColour(juce::PopupMenu::backgroundColourId, MyColors::background);
+        setColour(juce::PopupMenu::highlightedBackgroundColourId, MyColors::mediumPrimary);
+        setColour(juce::PopupMenu::textColourId, MyColors::white);
+
         juce::LookAndFeel::setDefaultLookAndFeel (this);
     }
     

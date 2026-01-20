@@ -74,5 +74,5 @@ private:
     juce::dsp::StateVariableTPTFilter<float> highpassDelayFilter;
     std::atomic<bool> filterOn;
     
-    JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (DelayProcessor);
+    JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (DelayProcessor)
 };

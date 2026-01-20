@@ -330,4 +330,6 @@ private:
 
     double sampleRate = 44100.0;
     float envelopeInput = 0.0f, envelopeOutput = 0.0f, attackRate = 0.0f, decayRate = 0.0f, releaseRate = 0.0f, releaseStartAmp = 0.0f, stealReleaseRate = 0.0f;
+
+    JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR(MyADSR)
 };

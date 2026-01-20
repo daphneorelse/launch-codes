@@ -202,5 +202,5 @@ private:
     const int numXGridLines { 11 };
     const int numYGridLines { 5 };
     
-    JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (EnvelopeView);
+    JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (EnvelopeView)
 };

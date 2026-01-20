@@ -86,4 +86,6 @@ private:
     int bufferSize = 100;
     float slowVisualizerSecondsPerScreenWidth { 2.0f }, fastVisualizerSecondsPerScreenWidth { 0.7f };
     const float spbCutoffFreq = 15.0f;
+
+    JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR(LFO)
 };

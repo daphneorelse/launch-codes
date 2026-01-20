@@ -219,10 +219,13 @@ bool PluginProcessor::isBusesLayoutSupported (const BusesLayout& layouts) const
 
 void PluginProcessor::processBlock (juce::AudioBuffer<float>& buffer, juce::MidiBuffer& midiMessages)
 {
-    juce::ScopedNoDenormals noDenormals;\
+    juce::ScopedNoDenormals noDenormals;
     
-    if (auto bpmFromHost = *getPlayHead()->getPosition()->getBpm())
-        bpm.store(bpmFromHost);
+    auto opt = getPlayHead()->getPosition()->getBpm();
+    if (opt.hasValue())
+        bpm.store(*opt);
+    else
+        bpm.store(120.0f);
     
     buffer.clear(0, buffer.getNumSamples());
     

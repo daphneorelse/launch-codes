@@ -72,9 +72,40 @@ MyVoice::MyVoice(juce::AudioProcessorValueTreeState& t_apvts,
 MyVoice::~MyVoice()
 {
     synthTree.removeListener(this);
+
+    apvts.removeParameterListener(ParamIDs::oscAttackAmp, this);
+    apvts.removeParameterListener(ParamIDs::oscDecayAmp, this);
+    apvts.removeParameterListener(ParamIDs::oscReleaseAmp, this);
+    apvts.removeParameterListener(ParamIDs::oscInitialAmp, this);
+    apvts.removeParameterListener(ParamIDs::oscPeakAmp, this);
+    apvts.removeParameterListener(ParamIDs::oscSustainAmp, this);
+    apvts.removeParameterListener(ParamIDs::oscAttackPitch, this);
+    apvts.removeParameterListener(ParamIDs::oscDecayPitch, this);
+    apvts.removeParameterListener(ParamIDs::oscReleasePitch, this);
+    apvts.removeParameterListener(ParamIDs::oscInitialPitch, this);
+    apvts.removeParameterListener(ParamIDs::oscPeakPitch, this);
+    apvts.removeParameterListener(ParamIDs::oscSustainPitch, this);
+    apvts.removeParameterListener(ParamIDs::oscEndPitch, this);
+    apvts.removeParameterListener(ParamIDs::noiseAttackAmp, this);
+    apvts.removeParameterListener(ParamIDs::noiseDecayAmp, this);
+    apvts.removeParameterListener(ParamIDs::noiseReleaseAmp, this);
+    apvts.removeParameterListener(ParamIDs::noiseInitialAmp, this);
+    apvts.removeParameterListener(ParamIDs::noisePeakAmp, this);
+    apvts.removeParameterListener(ParamIDs::noiseSustainAmp, this);
+    apvts.removeParameterListener(ParamIDs::noiseAttackCutoff, this);
+    apvts.removeParameterListener(ParamIDs::noiseDecayCutoff, this);
+    apvts.removeParameterListener(ParamIDs::noiseReleaseCutoff, this);
+    apvts.removeParameterListener(ParamIDs::noiseInitialCutoff, this);
+    apvts.removeParameterListener(ParamIDs::noisePeakCutoff, this);
+    apvts.removeParameterListener(ParamIDs::noiseSustainCutoff, this);
+    apvts.removeParameterListener(ParamIDs::noiseEndCutoff, this);
     
+    /*delete oscUI;
+    delete oscDSP;
     delete [] oscOutput;
-    delete [] noiseOutput;
+    delete noiseUI;
+    delete noiseDSP;
+    delete [] noiseOutput;*/
 }
 
 bool MyVoice::canPlaySound (juce::SynthesiserSound* sound)
@@ -129,28 +160,30 @@ void MyVoice::prepareToPlay (double t_sampleRate, int samplesPerBlock, int numOu
     oscBuffer.setSize(2, samplesPerBlock);
     noiseBuffer.setSize(2, samplesPerBlock);
     
-    oscDSP = new oscDsp();
+    /*oscDSP = new oscDsp();
     oscDSP->init(sampleRate);
     oscUI = new MapUI();
-    oscDSP->buildUserInterface(oscUI);
+    oscDSP->buildUserInterface(oscUI);*/
+    faustOsc.prepare(sampleRate, samplesPerBlock, numOutputChannels);
 
     setWaveType(synthTree[ParamIDs::oscWaveType]);
     
-    noiseDSP = new noiseDsp();
+    /*noiseDSP = new noiseDsp();
     noiseDSP->init(sampleRate);
     noiseUI = new MapUI();
-    noiseDSP->buildUserInterface(noiseUI);
+    noiseDSP->buildUserInterface(noiseUI);*/
+    faustNoise.prepare(sampleRate, samplesPerBlock, numOutputChannels);
     
-    noiseUI->setParamValue("gain", 0.5f);
+    faustNoise.ui->setParamValue("gain", 0.5f);
     setQ(noiseQParam->get());
     setFilterType(synthTree[ParamIDs::filterType]);
 
-    oscOutput = new float*[2];
+    /*oscOutput = new float*[2];
     noiseOutput = new float*[2];
     for (int channel = 0; channel < 2; ++channel) {
         oscOutput[channel] = new float[samplesPerBlock];
         noiseOutput[channel] = new float[samplesPerBlock];
-    }
+    }*/
     
     oscAmpEnv.setSampleRate(sampleRate);
     oscPitchEnv.setSampleRate(sampleRate);
@@ -240,7 +273,7 @@ void MyVoice::renderNextBlock (juce::AudioSampleBuffer& outputBuffer, int startS
         const float oscFineParamVal = oscFineParam->convertTo0to1(oscFineParam->get());
         const float oscCoarseParamVal = oscCoarseParam->convertTo0to1(oscCoarseParam->get());
         
-        for (int startSample = 0; startSample < numSamples; startSample += numSamplesIncrement)
+        for (int rangeStart = 0; rangeStart < numSamples; rangeStart += numSamplesIncrement)
         {
             const float samplesToUse = juce::jmin(numSamplesIncrement, numSamples - sampleIndex);
             
@@ -272,13 +305,13 @@ void MyVoice::renderNextBlock (juce::AudioSampleBuffer& outputBuffer, int startS
             const float targetFrequency = juce::jlimit(10.0f, sampleRate / 2.0f, DSPHelper::getFrequencyFromMidi(targetFreqMidi));
             setFrequency(targetFrequency);
 
-            oscDSP->compute(samplesToUse, NULL, oscOutput);
+            faustOsc.dsp->compute(samplesToUse, NULL, faustOsc.getOutputs());
 
             for (int channel = 0; channel < oscBuffer.getNumChannels(); channel++)
             {
                 for (int sample = 0; sample < samplesToUse; sample++)
                 {
-                    oscBuffs[channel][startSample + sample] = oscOutput[channel][sample];
+                    oscBuffs[channel][rangeStart + sample] = faustOsc.getOutputs()[channel][sample];
                 }
             }
 
@@ -328,7 +361,7 @@ void MyVoice::renderNextBlock (juce::AudioSampleBuffer& outputBuffer, int startS
             const float qValue = LFO::processLFOSample(noiseQParam, lfoTree.getChildWithName(ParamIDs::lfoNoiseQ), noiseQParam->convertTo0to1(noiseQParam->get()), lfo1.buffer.getSample(0, 0), lfo2.buffer.getSample(0, 0));
             setQ(qValue);
             
-            for (int startSample = 0; startSample < numSamples; startSample += numSamplesIncrement)
+            for (int rangeStart = 0; rangeStart < numSamples; rangeStart += numSamplesIncrement)
             {
                 const float samplesToUse = juce::jmin(numSamplesIncrement, numSamples - sampleIndex);
 
@@ -341,13 +374,13 @@ void MyVoice::renderNextBlock (juce::AudioSampleBuffer& outputBuffer, int startS
                 const float lfoCutoffMultiplier = juce::dsp::FastMathApproximations::exp(0.69314718056f * exponent); // roughly equivalent to pow(2, exponent)
                 setCutoff(juce::jlimit(30.0f, 20000.0f, noiseCutoff * lfoCutoffMultiplier * keyFollowMultiplier));
 
-                noiseDSP->compute(samplesToUse, NULL, noiseOutput);
+                faustNoise.dsp->compute(samplesToUse, NULL, faustNoise.getOutputs());
 
                 for (int channel = 0; channel < noiseBuffer.getNumChannels(); channel++)
                 {
                     for (int sample = 0; sample < samplesToUse; sample++)
                     {
-                        noiseBuffs[channel][startSample + sample] = noiseOutput[channel][sample];
+                        noiseBuffs[channel][rangeStart + sample] = faustNoise.getOutputs()[channel][sample];
                     }
                 }
 
@@ -356,13 +389,13 @@ void MyVoice::renderNextBlock (juce::AudioSampleBuffer& outputBuffer, int startS
         }
         else
         {
+            faustNoise.dsp->compute(numSamples, NULL, faustNoise.getOutputs());
+
             for (int channel = 0; channel < noiseBuffer.getNumChannels(); channel++)
             {
-                noiseDSP->compute(numSamples, NULL, noiseOutput);
-                
                 for (int sample = 0; sample < numSamples; sample++)
                 {
-                    noiseBuffs[channel][sample] = noiseOutput[channel][sample];
+                    noiseBuffs[channel][sample] = faustNoise.getOutputs()[channel][sample];
                 }
             }
         }
@@ -401,28 +434,28 @@ void MyVoice::renderNextBlock (juce::AudioSampleBuffer& outputBuffer, int startS
 void MyVoice::setWaveType(const int typeNum)
 {
     jassert(typeNum >= 0 && typeNum <= 3);
-    oscUI->setParamValue("wave", typeNum);
+    faustOsc.ui->setParamValue("wave", typeNum);
 }
 
 void MyVoice::setFrequency(const float newFreq)
 {
-    oscUI->setParamValue("freq", newFreq);
+    faustOsc.ui->setParamValue("freq", newFreq);
 }
 
 void MyVoice::setFilterType(const int typeNum)
 {
     jassert(typeNum >= 0 && typeNum <= 3);
-    noiseUI->setParamValue("fil_type", typeNum);
+    faustNoise.ui->setParamValue("fil_type", typeNum);
 }
 
 void MyVoice::setCutoff(const float newCutoff)
 {
-    noiseUI->setParamValue("cutoff", newCutoff);
+    faustNoise.ui->setParamValue("cutoff", newCutoff);
 }
 
 void MyVoice::setQ(const float newQ)
 {
-    noiseUI->setParamValue("q", newQ);
+    faustNoise.ui->setParamValue("q", newQ);
 }
 
 void MyVoice::valueTreePropertyChanged(juce::ValueTree& treeWhosePropertyHasChanged, const juce::Identifier& property)

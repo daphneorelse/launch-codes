@@ -85,6 +85,8 @@ public:
             g.fillPath(switchPath, juce::AffineTransform::rotation(juce::MathConstants<float>::pi, center.x, center.y));
         }
     };
+
+    JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR(ValueTreeToggleSwitch)
 };
 
 
@@ -171,6 +173,8 @@ private:
     juce::Rectangle<int> iconArea, mainArea;
     
     int styleFlags;
+
+    JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR(ValueTreeToolButton)
 };
 
 
@@ -270,6 +274,8 @@ private:
     
     int selection { 0 };
     bool pressed { false };
+
+    JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR(ValueTreeToolMultiToggler)
 };
 
 template <class T>
@@ -340,4 +346,6 @@ private:
     const juce::Identifier& property;
     
     bool state;
+
+    JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR(ComponentSwitcher)
 };

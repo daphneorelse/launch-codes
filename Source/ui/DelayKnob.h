@@ -41,5 +41,5 @@ private:
     
     float modRadius;
     
-    JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR(DelayKnob);
+    JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR(DelayKnob)
 };

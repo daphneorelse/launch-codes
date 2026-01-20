@@ -59,5 +59,5 @@ private:
     juce::dsp::LookupTableTransform<float>& waveshaperControlTable;
     juce::dsp::LookupTableTransform<float>& waveshaperTransformTable;
 
-    JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (WaveshaperProcessor);
+    JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (WaveshaperProcessor)
 };

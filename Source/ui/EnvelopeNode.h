@@ -44,5 +44,5 @@ public:
     const bool isSlope;
     const int index;
     
-    JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR(EnvelopeNode);
+    JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR(EnvelopeNode)
 };

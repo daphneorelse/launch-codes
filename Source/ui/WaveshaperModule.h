@@ -160,5 +160,5 @@ private:
     
     juce::Rectangle<int> totalArea, mainArea, toolArea;
     
-    JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR(WaveshaperModule);
+    JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR(WaveshaperModule)
 };
